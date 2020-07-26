@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         "/forgot-password": (ctx) => ForgotPasswordScreen(),
         "/app": (ctx) => BottomTabsLayout(),
       },
-      initialRoute: "/app",
+      initialRoute: "/",
     );
   }
 }

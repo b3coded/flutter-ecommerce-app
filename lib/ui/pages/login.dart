@@ -29,11 +29,8 @@ class LoginScreen extends StatelessWidget {
                 label: "Password",
                 secureText: true,
               ),
-
               InkWell(
-                onTap: () {
-                  openForgotPasswod(context);
-                },
+                onTap: () => openForgotPasswod(context),
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 15),
                   child: Row(
@@ -45,16 +42,15 @@ class LoginScreen extends StatelessWidget {
                         height: 15,
                         child: SvgPicture.asset(
                           "assets/icons/arrow-right.svg",
-
                         ),
                       )
                     ],
                   ),
                 ),
               ),
-
               Button(
                 text: "LOGIN",
+                onPress: () => openHome(context),
               ),
               Spacer(),
               Row(
@@ -107,5 +103,9 @@ class LoginScreen extends StatelessWidget {
 
   void openForgotPasswod(BuildContext ctx) {
     Navigator.pushNamed(ctx, "/forgot-password");
+  }
+
+  void openHome(BuildContext ctx) {
+    Navigator.pushNamed(ctx, "/app");
   }
 }
