@@ -1,6 +1,7 @@
 import 'package:ecommerceapp/ui/pages/forgot_password.dart';
 import 'package:ecommerceapp/ui/pages/login.dart';
 import 'package:ecommerceapp/ui/pages/signup.dart';
+import 'package:ecommerceapp/ui/pages/tabs/layout.dart';
 import 'package:ecommerceapp/ui/themes/dark.dart';
 import 'package:flutter/material.dart';
 
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
         "/": (ctx) => SignUpScreen(),
         "/login": (ctx) =>   LoginScreen(),
         "/forgot-password": (ctx) => ForgotPasswordScreen(),
+        "/app": (ctx) => BottomTabsLayout(),
       },
-      initialRoute: "/",
+      initialRoute: "/app",
     );
   }
 }

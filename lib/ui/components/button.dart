@@ -1,20 +1,22 @@
-
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
-  const Button({@required this.text, this.onPress});
+  Button({@required this.text, this.onPress, this.fullWidth = true});
 
   final String text;
   final void Function() onPress;
+  final bool fullWidth;
+
+  final BorderRadius _radius = BorderRadius.circular(40);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: fullWidth ? double.infinity : null,
       margin: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: _radius,
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Theme.of(context).primaryColor.withOpacity(0.6),
@@ -26,7 +28,7 @@ class Button extends StatelessWidget {
       ),
       child: Material(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: _radius,
         ),
         color: Colors.transparent,
         child: InkWell(
@@ -36,8 +38,8 @@ class Button extends StatelessWidget {
             }
           },
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+            decoration: BoxDecoration(borderRadius: _radius),
             child: Text(
               text,
               textAlign: TextAlign.center,
